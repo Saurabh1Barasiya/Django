@@ -23,4 +23,8 @@ urlpatterns = [
     path('learn_django/',views.learn_django),
     path('learn_math/', views.learn_math),
     path('learn/', views.learn_),
+
+    # diffrent url but function is same.
+    path('', views.welcome),
+    path('wel/', views.welcome),
 ]
