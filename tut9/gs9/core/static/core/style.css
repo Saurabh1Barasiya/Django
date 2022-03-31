@@ -1,0 +1,19 @@
+body{
+    background: #5a1616; ;
+}
+
+ul li a{
+    font-size: 20px;
+    cursor: pointer; 
+    display: inline-block;
+    margin: 10px 20px;
+    color:antiquewhite;
+}
+
+ul li {
+    list-style: none;
+}
+
+/* neuofician {
+
+} */

@@ -1,0 +1,15 @@
+<style>
+    ul>h1{
+        text-align: center;
+        color: #fff;
+        font-size: 50px;
+        font-family: 'Lobster', cursive;
+        margin-top: 50px;
+    }
+</style>
+<ul>
+    <h1>{{p}}</h1>
+    <li><a href="{% url 'home' %}">home</a></li>
+    <li><a href="{% url 'about' %}">about</a></li>
+    <li><a href="{% url 'contact' %}">contact</a></li>
+</ul>
