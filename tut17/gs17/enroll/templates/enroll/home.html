@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<body>
+    <h1>get specific value.</h1>
+    <label for="{{form.name.id_for_label}}">{{form.name.label}}</label>
+    {% comment %} <label for="id_name">Name</label> {% endcomment %}
+    {{form.name}}
+    <hr>
+    {{form.email.label_tag}} {{form.email}}
+    <h1>value of email {{form.email.value}}</h1> 
+    <h1>value of name {{form.name.value}}</h1>
+
+    <h3>name attribute in email field = <span style="color:red">{{form.email.html_name}}</span> </h3>
+
+    <h3>helptext for email field = <span style="color:red">{{form.email.help_text}}</span></h3>
+
+    <h3>email field is required or not <span style="color:red">{{form.email.field.required}}</span></h3> 
+</body>
+</html>
