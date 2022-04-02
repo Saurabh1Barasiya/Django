@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      .helptext {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>About field</h1>
+    <form action="">
+      {{form.as_p}}
+      <input type="submit" value="Submit" />
+    </form>
+    <hr>
+
+    <form action="">
+        {{form.label_tag }} {{ form }} <span id="myBlinkingSpan" style="color:red;font-size:20px;font-weight:bold">{{form.name.help_text}}</span>
+        <input type="submit" value="Submit" />
+      </form>
+    <script>
+      var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
+      var t = setInterval(function () {
+        var ele = document.getElementById("myBlinkingSpan");
+        ele.style.visibility = ele.style.visibility == "hidden" ? "" : "hidden";
+      }, blink_speed);
+    </script>
+  </body>
+</html>
