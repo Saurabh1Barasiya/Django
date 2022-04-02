@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>About Post</h1>
+    <h3 style='text-align:center;color:green;' id='post_form'>CSRF token ka input type hidden hota h and value every times change hoti h.</h3> 
+    <form action="" method='post'>
+       {% csrf_token %}
+       {% for field in form %}
+       {{field.label_tag}} {{field}} <br> <br>
+       {% endfor %}
+       <input type="submit" onclick="alert('form submited')" value="Submit">
+    </form>
+    <script>
+        var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
+        var t = setInterval(function () {
+          var ele = document.getElementById("post_form");
+          ele.style.visibility = ele.style.visibility == "hidden" ? "" : "hidden";
+        }, blink_speed);
+      </script>
+</body>
+</html>
