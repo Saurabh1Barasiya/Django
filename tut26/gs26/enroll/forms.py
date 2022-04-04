@@ -11,5 +11,5 @@ class StudentRegistration(forms.Form):
         # return valname # return the value if no error
 
         if valname[0] == 'S':
-            raise forms.ValidationError('name cannot contain the letter S')
+            raise forms.ValidationError('name cannot contain the letter first letter S')
         return valname  # return the value if no error
