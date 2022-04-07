@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Url</title>
+</head>
+<body>
+    <h1>Here we learn about dynamic Url.</h1>
+    <ul>
+        <li> <a href="{% url 'student' 1 %}">Student 1</a> </li>
+        <li> <a href="{% url 'student' 2 %}">Student 2</a> </li>
+        <li> <a href="{% url 'student' 3 %}">Student 3</a> </li>
+
+
+        {% comment %} sub data {% endcomment %}
+        <li> <a href="{% url 'student_subdata' 1 1 %}">Student Sub 1</a> </li>
+        <li> <a href="{% url 'student_subdata' 2 2 %}">Student Sub 2</a> </li>
+        <li> <a href="{% url 'student_subdata' 3 3 %}">Student Sub 3</a> </li>
+    </ul>
+</body>
+</html>
