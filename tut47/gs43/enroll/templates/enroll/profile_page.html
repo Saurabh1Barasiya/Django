@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Profile page {{name}}</h1>
+    <a href="{% url 'User_logout' %}" class="btn btn-primary">Logout</a> <br>
+    <a href="{% url 'change_pass_with_old' %}">Change Password with the help of old password</a> <br> <br>
+    <a href="{% url 'change_pass_without_old' %}">Change Password with without old password</a> <br>
+
+
+
+    {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        {% endif %}
+
+
+        {% if messages %}
+       
+        {% for message in messages %}
+    
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{me}}</strong> {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+    {% endfor %}
+    
+        {% endif %}
+</body>
+</html>
