@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponseRedirect
-from .forms import StudentRegistration,EditUserProfileForm
+from .forms import StudentRegistration,EditUserProfileForm,MyAuthenticationForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm,PasswordChangeForm,SetPasswordForm
 from django.contrib.auth import login, authenticate, logout,update_session_auth_hash
@@ -21,7 +21,7 @@ def user_login(request):
     if not request.user.is_authenticated:
         # if user already login h to fir vo user login page par nahi ja sakta
         if request.method == 'POST':
-            form = AuthenticationForm(request.POST,data=request.POST)
+            form = MyAuthenticationForm(request.POST,data=request.POST)
             if form.is_valid():
                 username = form.cleaned_data['username']
                 password = form.cleaned_data['password']
@@ -31,7 +31,7 @@ def user_login(request):
                     return HttpResponseRedirect('/profile_page/')
                     # here we write url name  not (name attribute)
         else:
-            form = AuthenticationForm()
+            form = MyAuthenticationForm()
         return render(request, 'enroll/user_login.html',{'form':form})
     else:
         return HttpResponseRedirect('/profile_page/')
