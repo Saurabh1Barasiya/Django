@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body class="container">
+    <h1>Profile page {{name}}</h1>
+
+    {% if users != None %}
+        <ul>
+            <h3>All users</h3>
+            {% for user in users %}
+                <li> <a href="{% url 'userdetail' user.id %}" target="_blank">{{user.username}}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+            {% for fm in form %}
+                {{fm.label_tag}} {{ fm }} {{fm.errors|striptags}}  <br> 
+            {% endfor %}
+    <input type="submit" value="Save"/>
+    </form>
+
+    <a href="{% url 'User_logout' %}" class="btn btn-primary">Logout</a> <br>
+    <a href="{% url 'change_pass_with_old' %}">Change Password with the help of old password</a> <br> <br>
+    <a href="{% url 'change_pass_without_old' %}">Change Password with without old password</a> <br>
+
+
+
+    {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        {% endif %}
+
+
+        {% if messages %}
+       
+        {% for message in messages %}
+    
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{message.tags }}</strong> {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+    {% endfor %}
+    
+        {% endif %}
+
+        <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
