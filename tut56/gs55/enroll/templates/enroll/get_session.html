@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get Session</title>
+    <style>
+        .keys{
+            background-color: red;
+        }
+
+        .values{
+            background-color: blue;
+        }
+
+        .items{
+            background-color: green;
+        }
+        h1{
+            color: black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Getting Session detail...</h1>
+    <div class="keys">
+        <h1>Keys</h1>
+        {% for key in keys %}
+            <p>{{ key }}</p>
+        {% endfor %}
+    </div>
+        
+    <div class="values">
+        <h1>Values</h1>
+        {% for value in values %}
+            <p>{{ value }}</p>
+        {% endfor %}
+    </div>
+
+    <div class="items">
+        <h1>Items</h1>  
+        {% for item in items %}
+            <p>{{ item }}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
