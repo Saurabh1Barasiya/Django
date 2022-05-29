@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+        <div class="row">
+            <div class="col-md-12">
+                {% block msg %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>{{ message.tags }}</strong> {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endblock %}
+
+               <h1 class="text-center">Signup page</h1>
+               
+               <form action="" method="post" novalidate>
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {{field.label_tag }} {{ field }} <span> {{field.errors|striptags}}</span>
+                    {% endfor %}
+                   <input type="submit" value="Signup" class="btn btn-primary mt-2">
+               </form>
+
+                {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                        <p>{{error}}</p> 
+                    {% endfor %}
+                {% endif %}
+        </div>
+{% endblock %}
