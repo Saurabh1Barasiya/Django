@@ -32,3 +32,4 @@ class Mother:
         response = self.get_response(request)
         print("This is Mother After view")
         return response
+        
