@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td,th{
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student data</h1>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Roll</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Cname</th>
+            <th scope="col">Ccity</th>
+          </tr>
+        </thead>
+        <tbody>
+         {% for stu in student_data %}
+          <tr>
+            <th scope="row">{{stu.id}}</th>
+            <td>{{stu.roll}}</td>
+            <td>{{stu.name}}</td>
+            <td>{{stu.age}}</td>
+            <td>{{stu.cname}}</td>
+            <td>{{stu.ccity}}</td>
+          </tr>
+         {% endfor %}
+          
+        </tbody>
+      </table>
+
+
+    <h1>Exam_center</h1>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Cname</th>
+            <th scope="col">Ccity</th>
+          </tr>
+        </thead>
+        <tbody>
+         {% for tea in exam_center_data %}
+            <tr>
+                <th scope="row">{{tea.id}}</th>
+                <td>{{tea.cname}}</td>
+                <td>{{tea.ccity}}</td>
+            </tr>
+         {% endfor %}
+        </tbody>
+      </table>
+    </body>
+</html>
