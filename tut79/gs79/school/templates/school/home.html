@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td,th{
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student data</h1>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Date</th>
+            <th scope="col">Fees</th>
+          </tr>
+        </thead>
+        <tbody>
+         {% for stu in student_data %}
+          <tr>
+            {% comment %} ['id','name','age','date','fees'] {% endcomment %}
+            <th scope="row">{{stu.id}}</th>
+            <td>{{stu.name}}</td>
+            <td>{{stu.age}}</td>
+            <td>{{stu.date}}</td>
+            <td>{{stu.fees}}</td>
+          </tr>
+         {% endfor %}
+          
+        </tbody>
+      </table>
+
+
+    <h1>Teacher Data</h1>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Date</th>
+            <th scope="col">Salary</th>
+          </tr>
+        </thead>
+        <tbody>
+         {% for tea in teacher_data %}
+          <tr>
+            {% comment %} ['id','name','age','date','fees'] {% endcomment %}
+            <th scope="row">{{tea.id}}</th>
+            <td>{{tea.name}}</td>
+            <td>{{tea.age}}</td>
+            <td>{{tea.date}}</td>
+            <td>{{tea.salary}}</td>
+          </tr>
+         {% endfor %}
+          
+        </tbody>
+      </table>
+
+      <h1>Contractor Data</h1>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Date</th>
+            <th scope="col">Payment</th>
+          </tr>
+        </thead>
+        <tbody>
+         {% for cont in contractor_data %}
+          <tr>
+            {% comment %} ['id','name','age','date','fees'] {% endcomment %}
+            <th scope="row">{{cont.id}}</th>
+            <td>{{cont.name}}</td>
+            <td>{{cont.age}}</td>
+            <td>{{cont.date}}</td>
+            <td>{{cont.payment}}</td>
+          </tr>
+         {% endfor %}
+          
+        </tbody>
+      </table>
+
+    </body>
+</html>
