@@ -20,7 +20,6 @@ class StudentDeleteView(DeleteView):
     model = Student
     success_url = '/create/'
 
-
 class ThanksTemplateView(TemplateView):
     template_name = 'school/thanks.html'
 
